@@ -63,14 +63,14 @@ export const Welcome = () => {
   });
 
   // Escuchador botón google
-  googleLoginBtn.addEventListener("click", () => {
-    popupGoogle().then(() => {
+  googleLoginBtn.addEventListener("click", () => {  
+    popupGoogle().then(() => {  //promesas
       onNavigate("/wall");
     });
   });
 
   //Escuchador boton login
-  loginButton.addEventListener("click", (e) => {
+  loginButton.addEventListener("click", (e) => { //creamos el evento loginButton
     e.preventDefault();
     const loginEmail = emailInput.value;
     const loginPassword = passInput.value;
@@ -78,13 +78,13 @@ export const Welcome = () => {
       .then(() => {
         onNavigate("/wall");
       })
-      .catch((error) => {
+      .catch((error) => { //si no se cumple se va a catch
         const userNotFound = "Este email no está registrado";
         const wrongPassword = "Clave equivocada, intente de nuevo";
         const invalidEmail =
           "Correo invalido, revise la información suministrada";
         const enterPassword = "Por favor ingrese la contraseña";
-
+        //errores traidos del firebase
         if (error.code === "auth/invalid-email") {
           errorNotice.innerText = invalidEmail;
         } else if (error.code === "auth/wrong-password") {

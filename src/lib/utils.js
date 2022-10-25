@@ -1,4 +1,5 @@
 // En este archivo están todas las funciones/utilidades redirigidas por una URL hacia firestore
+//fireStore
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import {
   getFirestore,
@@ -11,17 +12,17 @@ import {
   getDoc,
   updateDoc, 
   arrayUnion,
-  Timestamp
+
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 //Importamos las funciones AUTH
+//Firebase- Autenticación
 import {
   getAuth,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 export {
@@ -40,7 +41,6 @@ export {
   doc,
   getDoc,
   updateDoc,
-  onAuthStateChanged,
   arrayUnion,
-  Timestamp
+  
 };

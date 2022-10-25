@@ -42,7 +42,7 @@ export const Wall = () => {
 
     posters.append(errorMessage, postComplete);
 
-    backButtonWall.addEventListener("click", () => {
+    backButtonWall.addEventListener("click", () => {  //boton de salir y volver al welcome
         onNavigate("/");
     });
 
@@ -96,7 +96,7 @@ export const Wall = () => {
                 btn.addEventListener("click", ({ target: { dataset } }) => {
                     const result = confirm("¿Estás seguro de borrar esta publicación?");
                     if (result === true){
-                        return deleteTask(dataset.id); //Averig. dataset
+                        return deleteTask(dataset.id); 
                     }
                     else {
                         return false;

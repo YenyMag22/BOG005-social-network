@@ -7,7 +7,6 @@ import { Wall } from "./components/Wall.js";
 const routes = {
   // aquí va la ruta y lo que debe renderizar
   "/": Welcome,
-  "/BOG005-social-network/src/": Welcome,
   "/register" : Register,
   "/wall" : Wall,
  };
@@ -17,17 +16,17 @@ const routes = {
 export const onNavigate = (pathname, paramRoutes = routes) => {
   const root = document.getElementById("root");
   window.history.pushState(
-    {}, 
+    {}, //objeto vacio
     pathname, 
-    window.location.origin + pathname,
+    window.location.origin + pathname,   //url donde queremos que nos lleve
     );
     if (root.firstChild) {
-      root.removeChild(root.firstChild);
+      root.removeChild(root.firstChild); //aqui nos oculta el welcome cuando vayamos a register o viceversa
     }  
   root.appendChild(paramRoutes[pathname]());
 };
 
-window.onpopstate = () => {
+window.onpopstate = () => {    //nos permite ir hacia adelante o hacia atras 
   const component = routes[window.location.pathname];
   const root = document.getElementById("root");
   if (root.firstChild) {

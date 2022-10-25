@@ -6,10 +6,10 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
-  onAuthStateChanged, 
+  
 } from "./utils.js";
 
-const firebaseConfig = {
+const firebaseConfig = {   //en esta llave se va a alojar nuestra data de publicaciones - fst 
   apiKey: "AIzaSyAjKkyDbHluBqhq8ZVzEkc1vb231KCN8os",
   authDomain: "migrored-9fcb3.firebaseapp.com",
   projectId: "migrored-9fcb3",
@@ -23,10 +23,10 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 // Declaramos a Google como proveedor
-export const provider = new GoogleAuthProvider();
-export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+export const provider = new GoogleAuthProvider(); //funcion constructora
+export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password); //creando un usuario
 export const popupGoogle = () => signInWithPopup(auth, provider);
-export const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
+export const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password); //logueando un usuario
 
 
 
